@@ -4,6 +4,9 @@ import sys
 
 payload = bytearray(32) #32 bytes of zeros
 
+hostname = 'localhost'
+port = 8888
+
 # Connect to pigpiod
 print(f'Connecting to GPIO daemon on {hostname}:{port} ...')
 pi = pigpio.pi(hostname, port)
