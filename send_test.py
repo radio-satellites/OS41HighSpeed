@@ -26,7 +26,7 @@ while True:
         break
     nrf.send(data)
     if counter % 100 == 0:
-        print(str(counter*32)+" bytes sent")
+        print(str((counter*32)/1024)+" bytes sent")
     counter = counter + 1
     
 f.close()
