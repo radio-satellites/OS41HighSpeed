@@ -18,6 +18,10 @@ nrf = NRF24(pi, ce=25, payload_size=RF24_PAYLOAD.DYNAMIC, channel=100, data_rate
 #nrf.set_address_bytes(len(address))
 #nrf.open_writing_pipe(address)
 
+f = open("test_full.jpg",'rb')
 while True:
-    nrf.send(payload)
-    print("OK")
+    data = f.read(32)
+    if not data:
+        break
+    nrf.send(data)
+f.close()
