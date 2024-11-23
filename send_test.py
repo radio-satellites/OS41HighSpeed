@@ -51,5 +51,6 @@ while True:
         if counter % 100 == 0:
             print(str((counter*32)/1024)+"kB sent")
         counter = counter + 1
+        time.sleep(1)
         
     f.close()
