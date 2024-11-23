@@ -34,7 +34,7 @@ while True:
     print("Sending image "+str(image_counter))
     image_counter = image_counter + 1
     picam2.switch_mode_and_capture_file(capture_config, "image.jpg")
-    im = Image.open('whatever.png')
+    im = Image.open('image.jpg')
     width, height = im.size
     print("Transmitting image with size "+str(width)+"x"+str(height))
     f = open("image.jpg",'rb')
