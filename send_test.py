@@ -4,6 +4,7 @@ import sys
 import time
 from PIL import Image
 from picamera2 import Picamera2
+import os
 
 print("Initializing Camera...")
 
@@ -37,6 +38,7 @@ while True:
     im = Image.open('image.jpg')
     width, height = im.size
     print("Transmitting image with size "+str(width)+"x"+str(height))
+    print(str(((os.stat('image.jpg').st_size)/1024))+" kB")
     f = open("image.jpg",'rb')
     counter = 0
     while True:
