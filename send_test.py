@@ -27,7 +27,7 @@ if not pi.connected:
     print("Not connected to pigpiod deamon. Exiting.")
     sys.exit()
 
-nrf = NRF24(pi, ce=25, payload_size=RF24_PAYLOAD.DYNAMIC, channel=100, data_rate=RF24_DATA_RATE.RATE_250KBPS, pa_level=RF24_PA.MAX)
+nrf = NRF24(pi, ce=25, payload_size=RF24_PAYLOAD.DYNAMIC, channel=1, data_rate=RF24_DATA_RATE.RATE_250KBPS, pa_level=RF24_PA.MAX)
 #nrf.set_address_bytes(len(address))
 #nrf.open_writing_pipe(address)
 while True:
