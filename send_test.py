@@ -44,12 +44,12 @@ while True:
     f = open("image.jpg",'rb')
     counter = 0
     while True:
-        data = f.read(32)
+        data = f.read(256)
         if not data:
             break
         nrf.send(data)
         if counter % 100 == 0:
-            print(str((counter*32)/1024)+"kB sent")
+            print(str((counter*256)/1024)+"kB sent")
         counter = counter + 1
         
     f.close()
