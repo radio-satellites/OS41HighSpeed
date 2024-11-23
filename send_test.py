@@ -2,13 +2,13 @@ import pigpio
 from nrf24 import *
 import sys
 import time
-
-from picamera2 import Picamera2, Preview
+from PIL import Image
+from picamera2 import Picamera2
 
 print("Initializing Camera...")
 
 picam2 = Picamera2()
-capture_config = picam2.create_still_configuration()
+capture_config = picam2.create_still_configuration(main={"size": (1920, 1080)})
 picam2.start()
 time.sleep(2)
 
@@ -34,6 +34,9 @@ while True:
     print("Sending image "+str(image_counter))
     image_counter = image_counter + 1
     picam2.switch_mode_and_capture_file(capture_config, "image.jpg")
+    im = Image.open('whatever.png')
+    width, height = im.size
+    print("Transmitting image with size "+str(width)+"x"+str(height))
     f = open("image.jpg",'rb')
     counter = 0
     while True:
